@@ -1,0 +1,43 @@
+{
+  "name": "trend-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "sanity:dev": "cd sanity && sanity dev",
+    "sanity:build": "cd sanity && sanity build",
+    "sanity:deploy": "cd sanity && sanity deploy"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@sanity/client": "^6.0.0",
+    "@sanity/image-url": "^1.0.0",
+    "next-sanity": "^7.0.0",
+    "@portabletext/react": "^3.0.0",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "zod": "^3.22.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.290.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "prettier": "^3.0.0",
+    "@sanity/cli": "^3.0.0"
+  }
+}
