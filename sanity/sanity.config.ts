@@ -1,7 +1,14 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+
+// Conditionally import visionTool to avoid build errors
+let visionTool: any = null
+try {
+  visionTool = require('@sanity/vision').visionTool
+} catch (e) {
+  // Vision tool not available, skip it
+}
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +17,7 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), ...(visionTool ? [visionTool()] : [])],
 
   schema: {
     types: schemaTypes,
