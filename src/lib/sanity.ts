@@ -3,7 +3,7 @@ import createImageUrlBuilder from '@sanity/image-url'
 import type { Image } from 'sanity'
 
 export const config = {
-  projectId: process.env.SANITY_PROJECT_ID!,
+  projectId: process.env.SANITY_PROJECT_ID || 'dummy-project-id',
   dataset: process.env.SANITY_DATASET || 'production',
   apiVersion: process.env.SANITY_API_VERSION || '2025-01-01',
   useCdn: process.env.NODE_ENV === 'production',
